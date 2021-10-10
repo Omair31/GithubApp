@@ -31,6 +31,7 @@
 		C45810042710BE5E00A1E034 /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45810032710BE5E00A1E034 /* RepositoryViewModel.swift */; };
 		C45810082710C4CB00A1E034 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45810072710C4CB00A1E034 /* Storyboarded.swift */; };
 		C45B2F7E2710E6B9009A55CC /* 4506-retry-and-user-busy-version-2.json in Resources */ = {isa = PBXBuildFile; fileRef = C45B2F7D2710E6B9009A55CC /* 4506-retry-and-user-busy-version-2.json */; };
+		C4B3A2A827130CC8002E0406 /* RepoTableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B3A2A727130CC8002E0406 /* RepoTableViewCellExtension.swift */; };
 		C4F2F7332712322000466085 /* MainQueueRepositoriesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F2F7322712322000466085 /* MainQueueRepositoriesAPI.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		C45810032710BE5E00A1E034 /* RepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
 		C45810072710C4CB00A1E034 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		C45B2F7D2710E6B9009A55CC /* 4506-retry-and-user-busy-version-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "4506-retry-and-user-busy-version-2.json"; sourceTree = "<group>"; };
+		C4B3A2A727130CC8002E0406 /* RepoTableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCellExtension.swift; sourceTree = "<group>"; };
 		C4F2F7322712322000466085 /* MainQueueRepositoriesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueRepositoriesAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +130,7 @@
 			children = (
 				C43DECEE2712D97600199BC1 /* UITableViewExtension.swift */,
 				C43DECEB2712D53200199BC1 /* UITableViewCellExtension.swift */,
+				C4B3A2A727130CC8002E0406 /* RepoTableViewCellExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 			files = (
 				C44F0A0C2710B6C8009E0C61 /* GithubRepositoriesAPI.swift in Sources */,
 				C44F09EE2710B3C0009E0C61 /* ViewController.swift in Sources */,
+				C4B3A2A827130CC8002E0406 /* RepoTableViewCellExtension.swift in Sources */,
 				C40C69142711E50500BFBB04 /* AnimatedButtonView.swift in Sources */,
 				C43DECEC2712D53200199BC1 /* UITableViewCellExtension.swift in Sources */,
 				C43DECEF2712D97600199BC1 /* UITableViewExtension.swift in Sources */,
