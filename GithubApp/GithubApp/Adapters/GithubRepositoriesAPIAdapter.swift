@@ -7,10 +7,6 @@
 
 import Foundation
 
-protocol ItemsService {
-    func fetchItems(completion: @escaping (Result<[RepositoryViewModel],Error>) -> ())
-}
-
 class GithubRepositoriesAPIAdapter: ItemsService {
     
     let api: RepositoriesAPI
