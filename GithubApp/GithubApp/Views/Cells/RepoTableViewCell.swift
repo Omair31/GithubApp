@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SkeletonView
 
 class RepoTableViewCell: UITableViewCell {
     
@@ -49,28 +48,6 @@ class RepoTableViewCell: UITableViewCell {
         countLabel.text = repositoryViewModel.stars
         profileImageView.loadImageWithUrlString(url: repositoryViewModel.imageURL)
         starImageView.image = theme == .dark ? UIImage(named: repositoryViewModel.darkModeStarImage) : UIImage(named: repositoryViewModel.lightModeStarImage)
-    }
-    
-    func showSkeletonView() {
-        profileImageView.showAnimatedGradientSkeleton()
-        titleLabel.showAnimatedGradientSkeleton()
-        subtitleLabel.showAnimatedGradientSkeleton()
-        descriptionLabel.showAnimatedGradientSkeleton()
-        languageColorView.showAnimatedGradientSkeleton()
-        languageLabel.showAnimatedGradientSkeleton()
-        countLabel.showAnimatedGradientSkeleton()
-        starImageView.showAnimatedGradientSkeleton()
-    }
-    
-    func hideSkeletonView() {
-        profileImageView.hideSkeleton()
-        titleLabel.hideSkeleton()
-        subtitleLabel.hideSkeleton()
-        descriptionLabel.hideSkeleton()
-        languageColorView.hideSkeleton()
-        languageLabel.hideSkeleton()
-        countLabel.hideSkeleton()
-        starImageView.hideSkeleton()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
