@@ -8,8 +8,6 @@
 import UIKit
 import Lottie
 
-typealias CellProvider = ((UITableView, IndexPath) -> UITableViewCell)
-
 class ViewController: UIViewController, StoryBoarded {
     
     @IBOutlet weak var tableView: UITableView!
@@ -40,10 +38,6 @@ class ViewController: UIViewController, StoryBoarded {
         addRefreshControl()
         setupAnimationView()
         showSkeletonItems()
-    }
-    
-    func getItem(at indexPath: IndexPath) -> RepositoryViewModel {
-        return repositoryViewModels[indexPath.row]
     }
     
     func addRefreshControl() {
@@ -117,6 +111,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         if isLoading { return }
         let repositoryViewModel = repositoryViewModels[indexPath.row]
         repositoryViewModel.select()
+    }
+    
+}
+
+extension ViewController {
+    
+    func getItem(at indexPath: IndexPath) -> RepositoryViewModel {
+        return repositoryViewModels[indexPath.row]
     }
     
 }
