@@ -143,9 +143,9 @@
 			children = (
 				C44F09F42710B3C2009E0C61 /* LaunchScreen.storyboard */,
 				C44F09EF2710B3C0009E0C61 /* Main.storyboard */,
-				C43DECF12712DB9E00199BC1 /* Cells */,
 				C40C69132711E50500BFBB04 /* AnimatedButtonView.swift */,
 				C40C69102711E1AB00BFBB04 /* CustomImageView.swift */,
+				C43DECF12712DB9E00199BC1 /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";

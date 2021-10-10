@@ -43,6 +43,7 @@ class RepoTableViewCell: UITableViewCell {
         titleLabel.text = repositoryViewModel.title
         subtitleLabel.text = repositoryViewModel.subtitle
         descriptionLabel.text = repositoryViewModel.description
+        descriptionLabel.font = UIFont.italicSystemFont(ofSize: 17)
         languageLabel.text = repositoryViewModel.language
         languageStackView.isHidden = repositoryViewModel.language.isEmpty
         countLabel.text = repositoryViewModel.stars
