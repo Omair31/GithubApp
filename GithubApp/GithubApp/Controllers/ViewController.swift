@@ -100,7 +100,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: RepoTableViewCell.cellIdentifier) as! RepoTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: RepoTableViewCell.cellIdentifier) as? RepoTableViewCell else { return UITableViewCell() }
         if isLoading {
             cell.showSkeletonView()
         } else {
