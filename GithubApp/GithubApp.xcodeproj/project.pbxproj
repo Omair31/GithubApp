@@ -12,6 +12,8 @@
 		C40C69142711E50500BFBB04 /* AnimatedButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40C69132711E50500BFBB04 /* AnimatedButtonView.swift */; };
 		C40FF8D62711865B007D446A /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40FF8D42711865B007D446A /* RepoTableViewCell.swift */; };
 		C40FF8D72711865B007D446A /* RepoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C40FF8D52711865B007D446A /* RepoTableViewCell.xib */; };
+		C413FA57271343720096D2F8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C413FA56271343720096D2F8 /* UIButtonExtension.swift */; };
+		C413FA5B271343910096D2F8 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C413FA5A271343910096D2F8 /* UIColorExtension.swift */; };
 		C43DECEC2712D53200199BC1 /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43DECEB2712D53200199BC1 /* UITableViewCellExtension.swift */; };
 		C43DECEF2712D97600199BC1 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43DECEE2712D97600199BC1 /* UITableViewExtension.swift */; };
 		C43DED0F2712DFC800199BC1 /* GithubAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43DED0E2712DFC800199BC1 /* GithubAppTests.swift */; };
@@ -55,6 +57,8 @@
 		C40C69132711E50500BFBB04 /* AnimatedButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedButtonView.swift; sourceTree = "<group>"; };
 		C40FF8D42711865B007D446A /* RepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
 		C40FF8D52711865B007D446A /* RepoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoTableViewCell.xib; sourceTree = "<group>"; };
+		C413FA56271343720096D2F8 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		C413FA5A271343910096D2F8 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		C43DECEB2712D53200199BC1 /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
 		C43DECEE2712D97600199BC1 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		C43DED0C2712DFC800199BC1 /* GithubAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,10 +136,12 @@
 		C43DECF72712DBCA00199BC1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C413FA56271343720096D2F8 /* UIButtonExtension.swift */,
 				C43DECEE2712D97600199BC1 /* UITableViewExtension.swift */,
 				C43DECEB2712D53200199BC1 /* UITableViewCellExtension.swift */,
 				C4B3A2A727130CC8002E0406 /* RepoTableViewCellExtension.swift */,
 				C4B3A2AF271327AA002E0406 /* CellProviderTypeAlias.swift */,
+				C413FA5A271343910096D2F8 /* UIColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -418,8 +424,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C44F0A0C2710B6C8009E0C61 /* GithubRepositoriesAPI.swift in Sources */,
+				C413FA57271343720096D2F8 /* UIButtonExtension.swift in Sources */,
 				C44F09EE2710B3C0009E0C61 /* ViewController.swift in Sources */,
 				C4B3A2A827130CC8002E0406 /* RepoTableViewCellExtension.swift in Sources */,
+				C413FA5B271343910096D2F8 /* UIColorExtension.swift in Sources */,
 				C40C69142711E50500BFBB04 /* AnimatedButtonView.swift in Sources */,
 				C43DECEC2712D53200199BC1 /* UITableViewCellExtension.swift in Sources */,
 				C43DECEF2712D97600199BC1 /* UITableViewExtension.swift in Sources */,
