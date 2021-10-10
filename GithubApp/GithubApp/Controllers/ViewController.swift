@@ -23,7 +23,7 @@ class ViewController: UIViewController, StoryBoarded {
     
     var cellProvider: CellProvider!
     
-    lazy var animatedButtonView = AnimatedButtonView(animationFileName: "4506-retry-and-user-busy-version-2", buttonTitle: "RETRY") { [weak self] in
+    lazy var animatedButtonView = AnimatedButtonView(animationFileName: "4506-retry-and-user-busy-version-2", buttonTitle: "RETRY", title: "Something went wrong...", subtitle: "An alien is probably blocking your signal") { [weak self] in
         self?.showSkeletonItems()
         self?.loadItems()
     }
