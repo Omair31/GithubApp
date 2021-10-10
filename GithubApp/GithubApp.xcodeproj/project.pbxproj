@@ -33,6 +33,7 @@
 		C45B2F7E2710E6B9009A55CC /* 4506-retry-and-user-busy-version-2.json in Resources */ = {isa = PBXBuildFile; fileRef = C45B2F7D2710E6B9009A55CC /* 4506-retry-and-user-busy-version-2.json */; };
 		C4B3A2A827130CC8002E0406 /* RepoTableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B3A2A727130CC8002E0406 /* RepoTableViewCellExtension.swift */; };
 		C4B3A2B0271327AA002E0406 /* CellProviderTypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B3A2AF271327AA002E0406 /* CellProviderTypeAlias.swift */; };
+		C4B3A2C227133A6B002E0406 /* ItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B3A2C127133A6B002E0406 /* ItemsService.swift */; };
 		C4F2F7332712322000466085 /* MainQueueRepositoriesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F2F7322712322000466085 /* MainQueueRepositoriesAPI.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		C45B2F7D2710E6B9009A55CC /* 4506-retry-and-user-busy-version-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "4506-retry-and-user-busy-version-2.json"; sourceTree = "<group>"; };
 		C4B3A2A727130CC8002E0406 /* RepoTableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCellExtension.swift; sourceTree = "<group>"; };
 		C4B3A2AF271327AA002E0406 /* CellProviderTypeAlias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellProviderTypeAlias.swift; sourceTree = "<group>"; };
+		C4B3A2C127133A6B002E0406 /* ItemsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsService.swift; sourceTree = "<group>"; };
 		C4F2F7322712322000466085 /* MainQueueRepositoriesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueRepositoriesAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,6 +165,7 @@
 			children = (
 				C45810072710C4CB00A1E034 /* Storyboarded.swift */,
 				C44F0A0E2710B713009E0C61 /* RepositoriesAPI.swift */,
+				C4B3A2C127133A6B002E0406 /* ItemsService.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				C44F0A022710B5AC009E0C61 /* Repository.swift in Sources */,
 				C45810002710BDD700A1E034 /* GithubRepositoriesAPIAdapter.swift in Sources */,
 				C45810042710BE5E00A1E034 /* RepositoryViewModel.swift in Sources */,
+				C4B3A2C227133A6B002E0406 /* ItemsService.swift in Sources */,
 				C40FF8D62711865B007D446A /* RepoTableViewCell.swift in Sources */,
 				C45810082710C4CB00A1E034 /* Storyboarded.swift in Sources */,
 			);
