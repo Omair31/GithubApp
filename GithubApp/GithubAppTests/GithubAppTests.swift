@@ -13,6 +13,25 @@ class GithubAppTests: XCTestCase {
     func makeSUT() -> ViewController {
         let viewController = ViewController.instantiate()
         viewController.title = "Repositories"
+        viewController.skeletonCellProvider = { tableView, indexPath in
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: RepoTableViewCell.cellIdentifier) as? RepoTableViewCell else { return UITableViewCell() }
+            cell.showSkeletonView()
+            return cell
+        }
+        
+        viewController.cellProvider = { tableView, indexPath in
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: RepoTableViewCell.cellIdentifier) as? RepoTableViewCell else { return UITableViewCell() }
+            let item = viewController.getItem(at: indexPath)
+            cell.configureCell(repositoryViewModel: item)
+            cell.hideSkeletonView()
+            return cell
+        }
+        
+        return viewController
+    }
+    
+    func makePassingSUT() -> ViewController {
+        let viewController = makeSUT()
         viewController.itemsService = GithubRepositoriesAPIAdapter(api: LocalRepositoriesAPI.shared, select: { (repository) in
            
         })
@@ -27,43 +46,56 @@ class GithubAppTests: XCTestCase {
     }
     
     func makeFailingSUT() -> ViewController {
-        let viewController = ViewController.instantiate()
-        viewController.title = "Repositories"
+        let viewController = makeSUT()
         viewController.itemsService = GithubRepositoriesAPIAdapter(api: FailingLocalRepositoriesAPI(), select: { (repository) in
            
         })
+        
+        viewController.skeletonCellProvider = { tableView, indexPath in
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: RepoTableViewCell.cellIdentifier) as? RepoTableViewCell else { return UITableViewCell() }
+            cell.showSkeletonView()
+            return cell
+        }
+        
+        viewController.cellProvider = { tableView, indexPath in
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: RepoTableViewCell.cellIdentifier) as? RepoTableViewCell else { return UITableViewCell() }
+            let item = viewController.getItem(at: indexPath)
+            cell.configureCell(repositoryViewModel: item)
+            cell.hideSkeletonView()
+            return cell
+        }
 
         return viewController
     }
     
     func testViewControllerTitle() {
-        let sut = makeSUT()
+        let sut = makePassingSUT()
         sut.loadViewIfNeeded()
         XCTAssertTrue(sut.title == "Repositories", "Checking View Controller Title to be Repositories")
     }
     
     func testIfDelegatesAreSetup() {
-        let sut = makeSUT()
+        let sut = makePassingSUT()
         sut.loadViewIfNeeded()
         XCTAssertNotNil(sut.tableView.delegate, "Check if tableView delegate is not nil")
         XCTAssertNotNil(sut.tableView.dataSource, "Check if tableView datasource is not nil")
     }
     
     func testNumberOfItemsAfterViewLoads() {
-        let sut = makeSUT()
+        let sut = makePassingSUT()
         sut.loadViewIfNeeded()
         XCTAssertTrue(sut.tableView.numberOfRows(inSection: 0) == 8, "Checking 8 dummy skeleton cells")
     }
     
     func testNumberOfRowsAfterSystemLoadsData() {
-        let sut = makeSUT()
+        let sut = makePassingSUT()
         sut.loadViewIfNeeded()
         sut.loadItems()
         XCTAssertTrue(sut.repositoryViewModels.count == 10, "Checking for items to be 10")
     }
     
     func testNumberOfRowsAfterSystemIsRefreshed() {
-        let sut = makeSUT()
+        let sut = makePassingSUT()
         sut.loadViewIfNeeded()
         XCTAssertNotNil(sut.onRefresh, "Checking if onRefresh Method is provided or not")
         sut.onRefresh!()
@@ -86,14 +118,14 @@ class GithubAppTests: XCTestCase {
     }
     
     func testLocalStubData() {
-        let sut = makeSUT()
+        let sut = makePassingSUT()
         sut.loadViewIfNeeded()
         sut.loadItems()
         XCTAssertTrue(sut.repositoryViewModels[0].title == "golang/go", "Testing first object title")
     }
     
     func testIfAnimationViewIsHiddenAfterDataIsLoaded() {
-        let sut = makeSUT()
+        let sut = makePassingSUT()
         sut.loadViewIfNeeded()
         sut.loadItems()
         XCTAssertTrue(sut.animatedButtonView.isHidden == true, "Check if animation view is hidden after tableView is loaded with data")

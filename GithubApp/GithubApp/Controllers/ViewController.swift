@@ -8,6 +8,8 @@
 import UIKit
 import Lottie
 
+typealias CellProvider = ((UITableView, IndexPath) -> UITableViewCell)
+
 class ViewController: UIViewController, StoryBoarded {
     
     @IBOutlet weak var tableView: UITableView!
@@ -19,6 +21,10 @@ class ViewController: UIViewController, StoryBoarded {
     var onRefresh: (() -> ())?
     
     let refreshControl = UIRefreshControl()
+    
+    var skeletonCellProvider: CellProvider!
+    
+    var cellProvider: CellProvider!
     
     lazy var animatedButtonView = AnimatedButtonView(animationFileName: "4506-retry-and-user-busy-version-2", buttonTitle: "RETRY") { [weak self] in
         self?.showSkeletonItems()
@@ -34,6 +40,10 @@ class ViewController: UIViewController, StoryBoarded {
         addRefreshControl()
         setupAnimationView()
         showSkeletonItems()
+    }
+    
+    func getItem(at indexPath: IndexPath) -> RepositoryViewModel {
+        return repositoryViewModels[indexPath.row]
     }
     
     func addRefreshControl() {
@@ -100,15 +110,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: RepoTableViewCell.cellIdentifier) as? RepoTableViewCell else { return UITableViewCell() }
-        if isLoading {
-            cell.showSkeletonView()
-        } else {
-            cell.hideSkeletonView()
-            let repositoryViewModel = repositoryViewModels[indexPath.row]
-            cell.configureCell(repositoryViewModel: repositoryViewModel)
-        }
-        return cell
+        return isLoading ? skeletonCellProvider(tableView, indexPath) : cellProvider(tableView, indexPath)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
